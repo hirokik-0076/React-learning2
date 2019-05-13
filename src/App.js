@@ -1,26 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Language from './Language';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    // 指定されたコードを貼り付けてください
+    const languageList = [
+      {
+        name: 'HTML & CSS',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/html.svg'
+      },
+      {
+        name: 'JavaScript',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/es6.svg'
+      },
+      {
+        name: 'React',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/react.svg'
+      },
+      {
+        name: 'Ruby',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/ruby.svg'
+      },
+      {
+        name: 'Ruby on Rails',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/rails.svg'
+      },
+      {
+        name: 'Python',
+        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/python.svg'
+      }
+    ];
+
+    return (
+      <div>
+        <h1>言語一覧</h1>
+        <div className='language'>
+          {/* 以下のコードを削除してください */}
+          {/* ここまで */}
+          {/* mapメソッドを用いて、Languageコンポーネントを表示してください */}
+          {languageList.map((languageItem) => {
+            return (
+              // Languageコンポーネントを呼び出し、その中でpropsを渡してください
+              <Language 
+                name={languageItem.name}
+                image={languageItem.image}
+              />
+              
+            )
+          })}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
